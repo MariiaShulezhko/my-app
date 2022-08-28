@@ -1,0 +1,3 @@
+require.config({"config": {
+        "text":{"Vertex_AddressValidation/template/validation-result.html":"<!--\n/**\n * @copyright  Vertex. All rights reserved.  https://www.vertexinc.com/\n * @author     Mediotype                     https://www.mediotype.com/\n */\n-->\n<span class=\"vertex__address-suggest_message\"><%- message.text %></span>\n<% if (message.differences.length > 0) { %>\n    <div class=\"vertex__address-suggestion\">\n        <%- _.values(address.street_address).join(', ') %><br />\n        <%- address.city %>, <%- address.region_name %> <%- address.postal_code %><br />\n        <%- address.country_name %>\n    </div>\n    <% if (typeof warning !== 'undefined') { %>\n    <span><%= warning %></span>\n    <% } %>\n<% } %>\n"}
+}});

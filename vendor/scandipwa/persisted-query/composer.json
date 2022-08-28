@@ -1,0 +1,27 @@
+{
+    "name": "scandipwa/persisted-query",
+    "description": "ScandiPWA persisted query module",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "magento/framework": "*",
+        "magento/module-cache-invalidate": "*",
+        "magento/module-page-cache": "*",
+        "magento/module-store": "*",
+        "magento/module-graph-ql": "^100.3",
+        "colinmollenhour/credis": "^1.10"
+    },
+    "suggest": {
+        "magento/module-catalog": "To invalidate persisted_query cache after full reindex"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\PersistedQuery\\": "src"
+        }
+    }
+}

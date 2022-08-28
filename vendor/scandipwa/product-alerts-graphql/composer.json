@@ -1,0 +1,21 @@
+{
+    "name": "scandipwa/product-alerts-graphql",
+    "description": "Magneto 2 Product alerts graphQl endpoints",
+    "type": "magento2-module",
+    "require": {
+        "magento/module-product-alert": "100.4.*",
+        "magento/module-graph-ql": "100.4.*",
+        "magento/framework": "103.0.*"
+    },
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\ProductAlertsGraphQl\\": ""
+        }
+    }
+}

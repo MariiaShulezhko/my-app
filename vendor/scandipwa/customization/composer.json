@@ -1,0 +1,25 @@
+{
+    "name": "scandipwa/customization",
+    "description": "Customization configuration for ScandiPWA",
+    "type": "magento2-module",
+     "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "magento/framework": "*",
+        "scandipwa/locale": "^2",
+        "magento/module-config": "*",
+        "magento/module-cms": "*",
+        "magento/module-eav": "*",
+        "magento/module-catalog": "*",
+        "magento/module-store": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\Customization\\": "src"
+        }
+    }
+}

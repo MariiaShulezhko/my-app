@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpDebugGeneral" xdebug_debug_port="9003" ignore_connections_through_unregistered_servers="true">
+    <xdebug_debug_ports port="9003"/>
+    <xdebug_debug_ports port="9111"/>
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="http://localhost" name="create-magento-app">
+        <id>7e16e907-9ce3-4559-9d26-a30a5650d11f</id>
+      </server>
+    </servers>
+  </component>
+  <component name="RunManager">
+    <configuration name="create-magento-app" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="create-magento-app" session_id="PHPSTORM">
+      <method v="2"/>
+    </configuration>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myFormatOnlyChangedLines" value="true"/>
+    <option name="myRunOnSave" value="true"/>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
+    <option name="suggestChangeDefaultLanguageLevel" value="7.4"/>
+  </component>
+  <component name="PropertiesComponent">
+    <![CDATA[{"keyToString":{"RunOnceActivity.OpenProjectViewOnStart":"true","RunOnceActivity.ShowReadmeOnStart":"true"}}]]>
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/node_modules/.create-magento-app-cache/composer/composer.phar"/>
+    </execution>
+  </component>
+  <component name="MessDetector">
+    <phpmd_settings>
+      <MessDetectorConfiguration tool_path="$PROJECT_DIR$/vendor/bin/phpmd"/>
+    </phpmd_settings>
+  </component>
+  <component name="PhpCSFixer">
+    <phpcsfixer_settings>
+      <PhpCSFixerConfiguration tool_path="$PROJECT_DIR$/vendor/bin/php-cs-fixer" standards="PSR1;PSR2;Symfony;DoctrineAnnotation;PHP70Migration;PHP71Migration"/>
+    </phpcsfixer_settings>
+  </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <PhpCSConfiguration tool_path="$PROJECT_DIR$/vendor/bin/phpcs" standards="MySource;PEAR;PHPCompatibility;PSR1;PSR12;PSR2;Squiz;Zend" beautifier_path="$PROJECT_DIR$/vendor/bin/phpcbf"/>
+    </phpcs_settings>
+  </component>
+</project>

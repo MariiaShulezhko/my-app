@@ -1,0 +1,16 @@
+{
+    "name": "scandipwa/service-worker",
+    "type": "magento2-module",
+    "description": "ScandiPWA service worker router",
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\ServiceWorker\\": "src/"
+        }
+    }
+}

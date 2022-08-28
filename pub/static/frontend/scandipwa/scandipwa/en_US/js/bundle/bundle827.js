@@ -1,0 +1,3 @@
+require.config({"config": {
+        "jsbuild":{"Magento_Tinymce3/tiny_mce/plugins/table/js/merge_cells.js":"tinyMCEPopup.requireLangPack();\n\nvar MergeCellsDialog = {\n\tinit : function() {\n\t\tvar f = document.forms[0];\n\n\t\tf.numcols.value = tinyMCEPopup.getWindowArg('cols', 1);\n\t\tf.numrows.value = tinyMCEPopup.getWindowArg('rows', 1);\n\t},\n\n\tmerge : function() {\n\t\tvar func, f = document.forms[0];\n\n\t\ttinyMCEPopup.restoreSelection();\n\n\t\tfunc = tinyMCEPopup.getWindowArg('onaction');\n\n\t\tfunc({\n\t\t\tcols : f.numcols.value,\n\t\t\trows : f.numrows.value\n\t\t});\n\n\t\ttinyMCEPopup.close();\n\t}\n};\n\ntinyMCEPopup.onInit.add(MergeCellsDialog.init, MergeCellsDialog);\n"}
+}});

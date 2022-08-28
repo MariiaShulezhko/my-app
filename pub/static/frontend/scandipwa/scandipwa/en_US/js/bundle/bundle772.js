@@ -1,0 +1,3 @@
+require.config({"config": {
+        "jsbuild":{"Magento_Tinymce3/tiny_mce/plugins/example/js/dialog.js":"tinyMCEPopup.requireLangPack();\n\nvar ExampleDialog = {\n\tinit : function() {\n\t\tvar f = document.forms[0];\n\n\t\t// Get the selected contents as text and place it in the input\n\t\tf.someval.value = tinyMCEPopup.editor.selection.getContent({format : 'text'});\n\t\tf.somearg.value = tinyMCEPopup.getWindowArg('some_custom_arg');\n\t},\n\n\tinsert : function() {\n\t\t// Insert the contents from the input into the document\n\t\ttinyMCEPopup.editor.execCommand('mceInsertContent', false, document.forms[0].someval.value);\n\t\ttinyMCEPopup.close();\n\t}\n};\n\ntinyMCEPopup.onInit.add(ExampleDialog.init, ExampleDialog);\n"}
+}});

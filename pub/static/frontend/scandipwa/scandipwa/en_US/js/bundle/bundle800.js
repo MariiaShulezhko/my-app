@@ -1,0 +1,3 @@
+require.config({"config": {
+        "jsbuild":{"Magento_Tinymce3/tiny_mce/plugins/xhtmlxtras/js/abbr.js":"/**\n * abbr.js\n *\n * Copyright 2009, Moxiecode Systems AB\n * Released under LGPL License.\n *\n * License: http://tinymce.moxiecode.com/license\n * Contributing: http://tinymce.moxiecode.com/contributing\n */\n\nfunction init() {\n\tSXE.initElementDialog('abbr');\n\tif (SXE.currentAction == \"update\") {\n\t\tSXE.showRemoveButton();\n\t}\n}\n\nfunction insertAbbr() {\n\tSXE.insertElement('abbr');\n\ttinyMCEPopup.close();\n}\n\nfunction removeAbbr() {\n\tSXE.removeElement('abbr');\n\ttinyMCEPopup.close();\n}\n\ntinyMCEPopup.onInit.add(init);\n"}
+}});

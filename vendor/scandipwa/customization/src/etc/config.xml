@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ScandiPWA - Progressive Web App for Magento
+ *
+ * Copyright © Scandiweb, Inc. All rights reserved.
+ * See LICENSE for license details.
+ *
+ * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <color_customization>
+            <enable_color_customization>
+                <enable_custom_colors>0</enable_custom_colors>
+            </enable_color_customization>
+            <primary_colors>
+                <primary_base_color>f26323</primary_base_color>
+                <primary_dark_color>d1490c</primary_dark_color>
+                <primary_light_color>f69e77</primary_light_color>
+            </primary_colors>
+            <secondary_colors>
+                <secondary_base_color>f3f3f3</secondary_base_color>
+                <secondary_dark_color>949494</secondary_dark_color>
+                <secondary_light_color>f3f3f3d1</secondary_light_color>
+            </secondary_colors>
+        </color_customization>
+        <content_customization>
+
+        </content_customization>
+        <webmanifest_customization>
+            <webmanifest>
+                <name>ScandiPWA</name>
+                <short_name>ScandiPWA</short_name>
+                <description>ScandiPWA theme DEMO store</description>
+                <background_color>ffffff</background_color>
+                <lang>en-US</lang>
+                <theme_color>ffffff</theme_color>
+                <start_url>/?utm_source=homescreen&amp;utm_medium=scandiPWA</start_url>
+                <display>standalone</display>
+                <orientation>portrait</orientation>
+                <scope>/</scope>
+            </webmanifest>
+        </webmanifest_customization>
+        <layout_direction_configuration>
+            <layout_direction_section>
+                <layout_direction>ltr</layout_direction>
+            </layout_direction_section>
+        </layout_direction_configuration>
+    </default>
+</config>

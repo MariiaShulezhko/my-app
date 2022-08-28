@@ -1,0 +1,21 @@
+{
+    "name": "scandipwa/locale",
+    "description": "N/A",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "magento/framework": "*",
+        "magento/module-deploy": "^100.3",
+        "scandipwa/route717": "^2"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\Locale\\": "src"
+        }
+    }
+}

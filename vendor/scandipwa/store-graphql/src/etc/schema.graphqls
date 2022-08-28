@@ -1,0 +1,66 @@
+##
+# ScandiPWA_CatalogGraphQl
+#
+# @category    ScandiPWA
+# @package     ScandiPWA_StoreGraphQL
+# @author      Alfreds Genkins <info@scandiweb.com>
+# @author      Teodor Moquist <tm@scandesignmedia.com>
+# @copyright   Copyright (c) 2018 Scandiweb, Ltd (https://scandiweb.com)
+##
+
+type Query {
+    storeList: [StoreConfig] @resolver(class: "ScandiPWA\\StoreGraphQl\\Model\\Resolver\\StoreListResolver") @doc(description: "The store list query")
+    storeConfig : StoreConfig @resolver(class: "ScandiPWA\\StoreGraphQl\\Model\\Resolver\\StoreConfigResolver") @doc(description: "The store config query") @cache(cacheable: false)
+}
+
+type StoreConfig {
+    name: String
+    is_active: Boolean
+    default_country: String
+    terms_are_enabled: Boolean @doc(description: "Terms and conditions are enabled for checkout")
+    cookie_text: String @doc(description: "Cookie popup - Text")
+    cookie_link: String @doc(description: "Cookie popup - Cookie Privacy Page Link")
+    pagination_frame: Int @doc(description: "How many pagination links to display")
+    pagination_frame_skip: Int @doc(description: "Number of links that are skipped ahead before showing the next set of links in the pagination")
+    anchor_text_for_previous: String @doc(description: "Alternative text for the previous pages link in the pagination menu")
+    anchor_text_for_next: String @doc(description: "Alternative text for the next pages link in the pagination menu")
+    demo_notice: Boolean @doc(description: "Demo notice enabled for store")
+    reviews_allow_guest: Boolean @doc(description: "Are guest reviews enabled")
+    reviews_are_enabled: Boolean @doc(description: "Are reviews enabled")
+    wishlist_general_active: Boolean @doc(description: "Is wishlist enabled")
+    guest_checkout: Boolean  @doc(description: "Is guest checkout enabled")
+    is_email_confirmation_required: Boolean  @doc(description: "Is customer email confirmation enabled")
+    display_product_stock_status: Boolean  @doc(description: "Is product stock status displayed")
+    address_lines_quantity: Int @doc(description: "Number of address lines in forms")
+    show_vat_number_on_storefront: Boolean @doc(description: "Displays VAT Number field at address form")
+    show_tax_vat_number: String @doc(description: "Allows to control the visibility and validation of VAT/TAX Number at customer details / signup forms")
+    cookie_lifetime: String @doc(description: "Cookie lifetime in seconds")
+    plp_list_mode: String @doc(description: "PLP list mode")
+    priceTaxDisplay: PriceTaxDisplay @resolver(class: "ScandiPWA\\StoreGraphQl\\Model\\Resolver\\PriceTaxDisplayResolver") @doc(description: "The price tax display mode")
+    product_use_categories: Boolean @doc(description: "Use Categories Path for Product URLs")
+    region_display_all: Boolean @doc(description: "Defines if state field is displayed for countries that doesn't require state")
+    redirect_dashboard: Boolean @doc(description: "Allows to decide whether to redirect user after login")
+    layered_navigation_product_count_enabled: Boolean @doc(description: "Should layered navigation display product count")
+    downloadable_disable_guest_checkout: Boolean @doc(description: "Defines if guest can enter checkout with downloadable product in cart")
+    product_alert_allow_price: Boolean @doc(description: "Defines if product drop price alert is enabled")
+    product_alert_allow_stock: Boolean @doc(description: "Defines if product in stock alert is enabled")
+    downloadable_links_target_new_window: Boolean @doc(description: "Defines if downloadable links should be opened in new tab")
+    newsletter_general_active: Boolean @doc(description: "Is newsletter subscription enabled")
+    newsletter_subscription_allow_guest_subscribe: Boolean @doc(description: "Is newsletter subscription allowed for not authentificated users")
+    newsletter_subscription_confirm: Boolean @doc(description: "Is moderation of newsletter subscription required")
+    category_url_suffix: String @doc(description: "Category URL Suffix")
+    delivery_instore_active: Boolean @doc(description: "Defines if instore delivery method actived")
+    access_token_lifetime: String @doc(description: "Defines OAuth customer token lifetime")
+    use_calendar: Boolean @doc(description: "Use a popup calendar as input control for date fields")
+    year_range: String @doc(description: "Min and max years allowed")
+    date_fields_order: String @doc(description: "Day, month and year order in date fields")
+    time_format: String @doc(description: "24h or 12h + AM/PM format")
+    is_allowed_reorder: Boolean @doc(desription: "Defines if customer is allowed to reorder")
+    rss_order_subscribe_allow: Boolean @doc(description: "Defines if customer is allowed to subscribe to order status")
+    minimun_password_length: Int @doc(description: "Defines password minimun length for customer")
+}
+
+type PriceTaxDisplay {
+    product_price_display_type: String @doc(description: "Defines if product price will include/exclude tax or both in catalog")
+    shipping_price_display_type: String @doc(description: "Defines if shipping price will include/exclude tax or both")
+}

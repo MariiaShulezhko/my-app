@@ -1,0 +1,24 @@
+{
+    "name": "scandipwa/catalog-customer-graphql",
+    "description": "Magneto 2 Catalog customer graphQl related functionality extension",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "103.0.*",
+        "magento/module-catalog": "104.0.*",
+        "magento/module-customer": "103.0.*",
+        "magento/module-catalog-graph-ql": "100.4.*",
+        "magento/module-catalog-customer-graph-ql": "100.4.*",
+        "magento/module-store": "101.1.*"
+    },
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\CatalogCustomerGraphQl\\": ""
+        }
+    }
+}

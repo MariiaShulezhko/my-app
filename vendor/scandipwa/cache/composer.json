@@ -1,0 +1,21 @@
+{
+    "name": "scandipwa/cache",
+    "description": "ScandiPWA bootstrap module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "magento/module-graph-ql": "^100.3",
+        "magento/module-catalog": "*",
+        "magento/framework": "*",
+        "scandipwa/persisted-query": "^3"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\Cache\\": "src"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "scandipwa/slider",
+    "description": "Slider module for Magento 2",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-catalog": "*",
+        "magento/module-cms": "*",
+        "magento/module-backend": "*",
+        "magento/module-widget": "*",
+        "magento/module-media-storage": "*",
+        "magento/module-store": "*",
+        "scandiweb/module-core": "~0.1.2",
+        "claviska/simpleimage": "^3.3"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Scandiweb\\Slider\\": ""
+        }
+    },
+    "replace": {
+        "scandiweb/slider": "*"
+    }
+}

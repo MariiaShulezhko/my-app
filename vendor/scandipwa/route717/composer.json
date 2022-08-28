@@ -1,0 +1,23 @@
+{
+    "name": "scandipwa/route717",
+    "type": "magento2-module",
+    "description": "ScandiPWA dedicated router",
+    "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "magento/framework": "*",
+        "magento/module-store": "*",
+        "magento/module-customer": "*",
+        "magento/module-wishlist": "*",
+        "magento/module-url-rewrite": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "ScandiPWA\\Router\\": "src"
+        }
+    }
+}

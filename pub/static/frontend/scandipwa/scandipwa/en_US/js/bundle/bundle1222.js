@@ -1,0 +1,3 @@
+require.config({"config": {
+        "jsbuild":{"Magento_Captcha/js/action/refresh.js":"/**\n * Copyright \u00a9 Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n\ndefine([\n    'mage/storage'\n], function (storage) {\n    'use strict';\n\n    return function (refreshUrl, formId, imageSource) {\n        return storage.post(\n            refreshUrl,\n            JSON.stringify({\n                'formId': formId\n            }),\n            false\n        ).done(\n            function (response) {\n                if (response.imgSrc) {\n                    imageSource(response.imgSrc);\n                }\n            }\n        );\n    };\n});\n"}
+}});

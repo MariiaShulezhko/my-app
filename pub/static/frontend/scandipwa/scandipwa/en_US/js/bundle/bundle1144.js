@@ -1,0 +1,3 @@
+require.config({"config": {
+        "jsbuild":{"Magento_Checkout/js/view/review/actions/default.js":"/**\n * Copyright \u00a9 Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n\n/**\n * @deprecated since version 2.2.0\n */\ndefine([\n    'uiComponent'\n], function (Component) {\n    'use strict';\n\n    return Component.extend({\n        defaults: {\n            template: 'Magento_Checkout/review/actions/default'\n        },\n\n        /**\n         * @param {Object} parent\n         * @return {Function}\n         */\n        placeOrder: function (parent) {\n            return parent.placeOrder.bind(parent);\n        }\n    });\n});\n"}
+}});

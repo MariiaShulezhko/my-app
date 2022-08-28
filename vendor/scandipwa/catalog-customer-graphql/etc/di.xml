@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ScandiPWA - Progressive Web App for Magento
+ *
+ * Copyright © Scandiweb, Inc. All rights reserved.
+ * See LICENSE for license details.
+ *
+ * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ * @package scandipwa/catalog-customer-graphql
+ * @link https://github.com/scandipwa/catalog-customer-graphql
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\CatalogCustomerGraphQl\Model\Resolver\PriceTiers"
+                type="ScandiPWA\CatalogCustomerGraphQl\Model\Resolver\PriceTiers"/>
+</config>

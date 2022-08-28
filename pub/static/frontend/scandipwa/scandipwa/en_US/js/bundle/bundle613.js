@@ -1,0 +1,3 @@
+require.config({"config": {
+        "jsbuild":{"Amazon_Payment/js/view/checkout/summary/grand-total-mixin.js":"/*global define*/\n\ndefine([\n    'Amazon_Payment/js/model/storage'\n], function (amazonStorage) {\n    'use strict';\n\n    return function (GrandTotal) {\n        return GrandTotal.extend({\n            /**\n             * @return {Boolean}\n             */\n            isBaseGrandTotalDisplayNeeded: function () {\n                if (!amazonStorage.isAmazonAccountLoggedIn()) {\n                    return this._super();\n                }\n\n                return false;\n            }\n        });\n    }\n});\n"}
+}});

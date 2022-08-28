@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ScandiPWA - Progressive Web App for Magento
+ *
+ * Copyright © Scandiweb, Inc. All rights reserved.
+ * See LICENSE for license details.
+ *
+ * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Quote\Model\Quote" type="ScandiPWA\QuoteGraphQl\Model\Quote\Quote"/>
+    <preference for="Magento\QuoteGraphQl\Model\Cart\CheckCartCheckoutAllowance" type="ScandiPWA\QuoteGraphQl\Model\Cart\CheckCartCheckoutAllowance"/>
+    <type name="Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Composite">
+        <arguments>
+            <argument name="customizableOptionValues" xsi:type="array">
+                <item name="field" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Text</item>
+                <item name="date" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Text</item>
+                <item name="time" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Text</item>
+                <item name="date_time" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Text</item>
+                <item name="area" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Text</item>
+                <item name="drop_down" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Dropdown</item>
+                <item name="radio" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Dropdown</item>
+                <item name="checkbox" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Multiple</item>
+                <item name="multiple" xsi:type="string">Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Multiple</item>
+                <item name="file" xsi:type="string">ScandiPWA\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\File</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Option\Type\File">
+        <arguments>
+            <argument name="validatorInfo" xsi:type="object">Magento\Catalog\Model\Product\Option\Type\File\ValidatorInfo\Proxy</argument>
+            <argument name="validatorFile" xsi:type="object">ScandiPWA\QuoteGraphQl\Model\Product\Option\Type\File\ValidatorFile\Proxy</argument>
+        </arguments>
+    </type>
+    <preference for="Magento\Quote\Model\Quote\Item\Processor"
+                type="ScandiPWA\QuoteGraphQl\Model\Quote\Item\Processor"/>
+    <preference for="Magento\QuoteBundleOptions\Model\Cart\BuyRequest\BundleDataProvider"
+                type="ScandiPWA\QuoteGraphQl\Model\Cart\BuyRequest\BundleDataProvider"/>
+    <preference for="Magento\Bundle\Model\Product\Type"
+                type="ScandiPWA\QuoteGraphQl\Model\Bundle\Type"/>
+    <preference for="Magento\Catalog\Model\Product\Option\Type\File"
+                type="ScandiPWA\QuoteGraphQl\Model\FileSupport\Option\File"/>
+    <preference for="Magento\Quote\Model\Cart\BuyRequest\CustomizableOptionDataProvider"
+                type="ScandiPWA\QuoteGraphQl\Model\FileSupport\BuyRequest\CustomizableOptionDataProvider"/>
+    <preference for="Magento\QuoteGraphQl\Model\Resolver\CartPrices"
+                type="ScandiPWA\QuoteGraphQl\Model\Resolver\CartPrices"/>
+    <preference for="Magento\QuoteGraphQl\Model\Resolver\CartItems"
+                type="ScandiPWA\QuoteGraphQl\Model\Resolver\CartItems"/>
+    <preference for="Magento\QuoteGraphQl\Model\Resolver\ShippingAddress\SelectedShippingMethod"
+                type="ScandiPWA\QuoteGraphQl\Model\Resolver\ShippingAddress\SelectedShippingMethod"/>
+    <preference for="Magento\QuoteGraphQl\Model\Cart\GetCartForUser"
+                type="ScandiPWA\QuoteGraphQl\Model\Cart\GetCartForUser"/>
+</config>
+
