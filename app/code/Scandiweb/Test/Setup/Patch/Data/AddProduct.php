@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @category  Scandiweb_Test
  * @author    Mariia Shulezhko <mariia.shulezhko@scandiweb.com | info@scandiweb.com>
