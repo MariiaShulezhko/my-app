@@ -17,7 +17,7 @@ use Magento\Catalog\Model\CategoryFactory;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Framework\App\State;
 
-class AddSimpleProduct implements DataPatchInterface
+class AddProduct implements DataPatchInterface
 {
     /**
      * @var ProductRepositoryInterface
