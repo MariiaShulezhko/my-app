@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @category  Scandiweb_Test
  * @author    Mariia Shulezhko <mariia.shulezhko@scandiweb.com | info@scandiweb.com>
@@ -41,7 +40,6 @@ class AddProduct implements DataPatchInterface
     protected $storeManager;
 
     /**
-     * CreateSimpleProduct constructor.
      * @param ModuleDataSetupInterface $moduleDataSetup
      * @param ProductInterfaceFactory $productFactory
      * @param ProductRepositoryInterface $productRepository
