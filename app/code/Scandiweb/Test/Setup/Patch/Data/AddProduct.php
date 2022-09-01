@@ -141,7 +141,7 @@ class AddProduct implements DataPatchInterface
     }
 
     /**
-     * @return array|string[]
+     * @return array
      */
     public function getAliases(): array
     {
