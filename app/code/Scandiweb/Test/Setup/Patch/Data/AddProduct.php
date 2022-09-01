@@ -16,6 +16,7 @@ use Magento\Store\Model\StoreManagerInterface;
 use Magento\Catalog\Model\CategoryFactory;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Framework\App\State;
+use Magento\InventoryApi\Api\Data\SourceItemInterfaceFactory;
 
 class AddProduct implements DataPatchInterface
 {
@@ -40,6 +41,16 @@ class AddProduct implements DataPatchInterface
     protected $storeManager;
 
     /**
+     * @var State
+     */
+    protected State $appState;
+
+    /**
+     * @var SourceItemInterfaceFactory
+     */
+    protected $sourceItemFactory;
+
+    /**
      * @param ModuleDataSetupInterface $moduleDataSetup
      * @param ProductInterfaceFactory $productFactory
      * @param ProductRepositoryInterface $productRepository
@@ -54,22 +65,32 @@ class AddProduct implements DataPatchInterface
         CategoryFactory $categoryFactory,
         CategoryRepositoryInterface $categoryRepository,
         StoreManagerInterface $storeManager,
-        State $state
-    )
-    {
-        $this->moduleDataSetup    = $moduleDataSetup;
-        $this->productFactory     = $productFactory;
-        $this->productRepository  = $productRepository;
-        $this->categoryFactory    = $categoryFactory;
+        State $state,
+        SourceItemInterfaceFactory $sourceItemFactory
+    ) {
+        $this->moduleDataSetup = $moduleDataSetup;
+        $this->productFactory = $productFactory;
+        $this->productRepository = $productRepository;
+        $this->categoryFactory = $categoryFactory;
         $this->categoryRepository = $categoryRepository;
-        $this->storeManager       = $storeManager;
-        $state->setAreaCode('adminhtml');
+        $this->storeManager = $storeManager;
+        $state->emulateAreaCode('adminhtml');
+        $this->appState = $state;
+        $this->sourceItemFactory = $sourceItemFactory;
+    }
+
+    /**
+     * @return void
+     */
+    public function apply(): void
+    {
+      $this->appState->emulateAreaCode('adminhtml', [$this, 'execute']);
     }
 
     /**
      * @return string
      */
-    public function apply()
+    public function execute(): string
     {
         $product = $this->productFactory->create();
 
@@ -99,31 +120,31 @@ class AddProduct implements DataPatchInterface
                 ->setVisibility($data['visibility'])
                 ->setTypeId($data['type_id'])
                 ->setCategoryIds($data['category_id'])
-                ->setStockData(
-                    array(
-                        'use_config_manage_stock' => 0,
-                        'manage_stock' => 1,
-                        'is_in_stock' => 1,
-                        'qty' => 199
-                    )
-                );
+                ->setStockData(['use_config_manage_stock' => 1, 'is_qty_decimal' => 0, 'is_in_stock' => 1]);
+
             $product = $this->productRepository->save($product);
-            $product->save();
+
+            $sourceItem = $this->sourceItemFactory->create();
+            $sourceItem->setSourceCode('default');
+            $sourceItem->setQuantity(10);
+            $sourceItem->setSku($product->getSku());
+            $sourceItem->setStatus(SourceItemInterface::STATUS_IN_STOCK);
         }
     }
 
-    public static function getDependencies()
+    /**
+     * @return array
+     */
+    public static function getDependencies(): array
     {
         return [];
     }
 
-    public function getAliases()
+    /**
+     * @return array|string[]
+     */
+    public function getAliases(): array
     {
         return [];
-    }
-
-    public static function getVersion()
-    {
-        return '2.0.0';
     }
 }
